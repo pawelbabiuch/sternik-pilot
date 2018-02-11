@@ -7,7 +7,7 @@ public class Z10 {
 		int[] out = new int[znaki.length];
 
 		for (int j = 0; j < znaki.length; j++) {
-			out[j] = compute(liczby[0][j], liczby[1][j], znaki[j]);
+			out[j] = licz(liczby[0][j], liczby[1][j], znaki[j]);
 		}
 		for (int i : out) {
 			System.out.print("[" + i + "] ");
@@ -15,7 +15,7 @@ public class Z10 {
 
 	}
 
-	static int compute(int liczba1, int liczba2, char znak) {
+	public static int licz(int liczba1, int liczba2, char znak) {
 		switch (znak) {
 		case '-': {
 			return liczba1 - liczba2;

@@ -11,27 +11,16 @@ public class Z09 {
         int w1 = input.nextInt();
         System.out.print("Podaj 2 wiersz do zamiany: ");
         int w2 = input.nextInt();
-        zamien2(w1, w2, tablica);
+        zamien(w1, w2, tablica);
         wyswietl(tablica);
     }
-    public static int[][] zamien2(int w1, int w2, int[][] tablica) {
+    public static int[][] zamien(int w1, int w2, int[][] tablica) {
         int[] tmp1, tmp2;
         tmp1 = tablica[w1];
         tmp2 = tablica[w2];
         tablica[w1] = tmp2;
         tablica[w2] = tmp1;
         return tablica;
-    }
-    protected static int[][] zamien(int w1, int w2, int[][] tablica) {
-        int[][] out = new int[2][];
-        out[0] = new int[tablica[w1].length];
-        out[1] = new int[tablica[w2].length];
-        out[0] = tablica[w1];
-        out[1] = tablica[w2];
-        tablica[w1] = out[1];
-        tablica[w2] = out[0];
-        return tablica;
-
     }
 
     private static void wyswietl(int[][] tablica) {

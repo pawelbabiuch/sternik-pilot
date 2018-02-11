@@ -1,14 +1,14 @@
 package pl.sternik.pb.zadania.zad11;
 
-enum StanLepszy {
+enum Stan {
 	NOWE(), OCZEKUJACE(), REALIZOWANE("Pilne"), WYSLANE(), ZWROT("Kontakt!");
 	private String stan = "";
 
-	private StanLepszy(String stan) {
+	private Stan(String stan) {
 		this.stan = stan;
 	}
 
-	private StanLepszy() {
+	private Stan() {
 	}
 
 	public String getStan() {
@@ -19,11 +19,21 @@ enum StanLepszy {
 	}
 };
 
-public class Z11Lepiej {
+public class Z11 {
 	public static void main(String[] args) {
-		for (StanLepszy s : StanLepszy.values()) {
-			System.out.println("----- Wywołanie dla: " + s.name());
-			System.out.println(s.getStan());
+		
+		String[] out = new String[2];
+		
+		for (Stan s : Stan.values()) {
+			out = checkOut(s);
 		}
+	}
+	
+	public static String[] checkOut(Stan s)
+	{
+		String[] out = new String[2];
+		out[0] = s.name();
+		out[1] = s.getStan();
+		return out;
 	}
 }

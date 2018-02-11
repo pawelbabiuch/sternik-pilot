@@ -6,7 +6,6 @@ public class Z07 {
 
     public static void main(String[] args) {
         int[] tablica = { 5, 4, 3, 4, 6, 6, 9, 1, 9 };
-        // int[] tablica = { 2, 2, 2, 4, 5, 5, 8, 1, 8 };
         Scanner input = new Scanner(System.in);
 
         Z07 z07 = new Z07();
@@ -31,7 +30,7 @@ public class Z07 {
         return tmp;
     }
 
-    public int znajdzPodzielna(int[] tablica, int dzielnik) {
+    public static int znajdzPodzielna(int[] tablica, int dzielnik) {
         for (int i = 0; i < tablica.length; i++) {
             if (tablica[i] % dzielnik == 0) {
                 return i;

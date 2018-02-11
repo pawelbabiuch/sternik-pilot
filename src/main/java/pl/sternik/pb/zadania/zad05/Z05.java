@@ -1,9 +1,9 @@
 package pl.sternik.pb.zadania.zad05;
-
+// CTRL+u - nowy test, CTRL + j - odpala testy, CTRL + r - przełącza pomiędzy testy
 public class Z05 {
 
 	public static void main(String[] args) {
-		String[] tablica = { "Raz", "Dwa", "Trzy", "Cztery" };
+		String[] tablica = { "1", "2", "3", "4" };
 
 		String tmp = zrobPetleFor(tablica);
 		// System.out.println(tmp);
@@ -18,30 +18,33 @@ public class Z05 {
 
 	static String zrobPetleFor(String[] tablica) {
 		int i;
+		String tmp = "For\n";
 		for (i = 0; i <= tablica.length - 1; i++) {
-			System.out.println(tablica[i]);
+		//	System.out.println(tablica[i]);
+			tmp += tablica[i];
 		}
-		return "";
+		return tmp;
 	}
 
 	static String zrobPetleWhile(String[] tablica) {
 		int i;
 		i = 0;
+		String tmp = "While\n";
 		while (i <= tablica.length - 1) {
-			System.out.println(tablica[i]);
+		//	System.out.println(tablica[i]);
+			tmp += tablica[i];
 			i++;
 		}
-		return "";
+		return tmp;
 	}
 
 	static String zrobPetleForEach(String[] tablica) {
 		String tmp = "";
-		// brzydka metoda sklejania Stringa.
-		tmp = tmp + "Petla FOREach";
+		tmp = tmp + "FOREach\n";
 		for (String string : tablica) {
-			tmp = tmp + "\n" + string;
+			tmp += string;
 		}
-		System.out.println(tmp);
+
 		return tmp;
 	}
 }
