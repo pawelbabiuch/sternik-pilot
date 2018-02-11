@@ -1,4 +1,4 @@
-package pl.sternik.kk.zadania.zad11;
+package pl.sternik.pb.zadania.zad11;
 
 enum StanLepszy {
 	NOWE(), OCZEKUJACE(), REALIZOWANE("Pilne"), WYSLANE(), ZWROT("Kontakt!");

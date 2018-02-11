@@ -1,4 +1,4 @@
-package pl.sternik.kk.zadania.zad10;
+package pl.sternik.pb.zadania.zad10;
 
 public class Z10 {
 	public static void main(String[] args) {

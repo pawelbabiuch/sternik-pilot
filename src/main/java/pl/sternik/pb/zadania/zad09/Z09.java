@@ -1,4 +1,4 @@
-package pl.sternik.kk.zadania.zad09;
+package pl.sternik.pb.zadania.zad09;
 
 import java.util.Scanner;
 
