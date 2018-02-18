@@ -24,7 +24,8 @@ public class Z10 {
 			return liczba1 * liczba2;
 		}
 		case '/': {
-			return (int) (liczba1 / liczba2);
+			if(liczba2 == 0) return -1;
+			else return (int) (liczba1 / liczba2);
 		}
 		default: {// +
 			return liczba1 + liczba2;

@@ -1,1 +1,1 @@
-jar -cfe zad01.jar pl.sternik.kk.zadania.Zad01 pl/sternik/kk/zadania/Zad01.class
+jar -cfe zad01.jar pl.sternik.pb.zadania.Zad01 pl/sternik/pb/zadania/Zad01.class

@@ -31,15 +31,23 @@ public class Z07 {
     }
 
     public static int znajdzPodzielna(int[] tablica, int dzielnik) {
-        for (int i = 0; i < tablica.length; i++) {
-            if (tablica[i] % dzielnik == 0) {
-                return i;
+    	
+    	if(dzielnik != 0)
+    	{
+            for (int i = 0; i < tablica.length; i++) {
+                if (tablica[i] % dzielnik == 0) {
+                    return i;
+                }
             }
-        }
+    	}
+    	
         return -1;
     }
 
     public int znajdzPodzielnaWhile(int[] tablica, int dzielnik) {
+    	
+    	if(dzielnik == 0) return -1;
+    	
         int i = 0;
         while (i < tablica.length && tablica[i] % dzielnik != 0) {
             i++;

@@ -17,4 +17,17 @@ public class Z10Test {
 			assertThat(wynik).isEqualTo(out[i]);
 		}
 	}
+	
+	@Test
+	public void testDziel0() throws Exception {
+		int[] l1 = {1,2,6};
+		int[] l2 = {0,0,0};
+		char[] znak = {'/', '/', '/'};
+		int[] out = {-1, -1, -1};
+		
+		for (int i = 0; i < out.length; i++) {
+			int wynik = Z10.licz(l1[i], l2[i], znak[i]);
+			assertThat(wynik).isEqualTo(out[i]);
+		}
+	}
 }

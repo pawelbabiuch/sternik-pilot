@@ -1,4 +1,4 @@
-package pl.sternik.kk.zadania;
+package pl.sternik.pb.zadania;
 
 public class Main {
 
