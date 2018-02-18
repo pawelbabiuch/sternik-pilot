@@ -2,6 +2,8 @@ package pl.sternik.pb.zadania.zad32;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Z32 {
@@ -38,7 +40,25 @@ public class Z32 {
 	
 	static void listowanie(String[] tab)
 	{
-	//	List<String> list = ArrayList(tab);
+		List<String> list = Arrays.asList(tab);
+		Collections.sort(list);
+		
+		System.out.println("Wyswietlenie listy dla For:");
+		for (int i = 0; i < tab.length; i++) {
+			String string = tab[i];
+			System.out.println(string);
+		}
+		
+		System.out.println("Wyswietlenie listy dla For-each:");
+		for (String string : list) {
+			System.out.println(string);
+		}
+		
+		System.out.println("Wyswietlenie listy dla iteratora:");
+		for(Iterator i = list.iterator(); i.hasNext();) {
+			String s = (String)i.next();
+			System.out.println(s);
+		}
 	}
 
 }
