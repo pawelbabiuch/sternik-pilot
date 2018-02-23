@@ -2,8 +2,6 @@ package pl.sternik.pb.zadania.zad35;
 
 import java.util.*;
 
-//import org.mockito.cglib.core.Local;
-
 public class Article {
 
 	private Scanner s = new Scanner(System.in);
