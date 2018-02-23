@@ -20,14 +20,14 @@ public class Z10Test {
 	
 	@Test
 	public void testDziel0() throws Exception {
-		int[] l1 = {1,2,6};
+		int[] l1 = {-1,200,-26};
 		int[] l2 = {0,0,0};
 		char[] znak = {'/', '/', '/'};
-		int[] out = {-1, -1, -1};
+		int out = Integer.MIN_VALUE;
 		
-		for (int i = 0; i < out.length; i++) {
+		for (int i = 0; i < l1.length; i++) {
 			int wynik = Z10.licz(l1[i], l2[i], znak[i]);
-			assertThat(wynik).isEqualTo(out[i]);
+			assertThat(wynik).isEqualTo(out);
 		}
 	}
 }

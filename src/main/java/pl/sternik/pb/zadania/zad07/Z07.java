@@ -30,6 +30,9 @@ public class Z07 {
         return tmp;
     }
 
+    
+	// Uwzględniłem, że jeżeli dziielnik będzie równy 0, to
+	// zwrócona wartość będzie równa najmniejszej możliwej dla inta.
     public static int znajdzPodzielna(int[] tablica, int dzielnik) {
     	
     	if(dzielnik != 0)
@@ -41,12 +44,14 @@ public class Z07 {
             }
     	}
     	
-        return -1;
+        return Integer.MIN_VALUE;
     }
 
+	// Uwzględniłem, że jeżeli dziielnik będzie równy 0, to
+	// zwrócona wartość będzie równa najmniejszej możliwej dla inta.
     public int znajdzPodzielnaWhile(int[] tablica, int dzielnik) {
     	
-    	if(dzielnik == 0) return -1;
+    	if(dzielnik == 0) return Integer.MIN_VALUE;
     	
         int i = 0;
         while (i < tablica.length && tablica[i] % dzielnik != 0) {
