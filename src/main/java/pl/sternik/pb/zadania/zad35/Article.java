@@ -1,3 +1,5 @@
+// Wyjaśnienie do ticketa w oddzielnym komentarzu
+
 package pl.sternik.pb.zadania.zad35;
 
 import java.util.*;
