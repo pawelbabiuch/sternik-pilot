@@ -21,5 +21,6 @@ public class Z35 {
 		
 		// Sortowanie listy pracowników po ID
 		List<Employee> pracownicy = shop.getSortedEmployeesByID();
+		
 	}
 }

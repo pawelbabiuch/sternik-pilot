@@ -1,13 +1,12 @@
-﻿package pl.sternik.pb.zadania.zad35;
+package pl.sternik.pb.zadania.zad35;
 
 import java.util.*;
 
 //import org.mockito.cglib.core.Local;
 
-// Jest to uproszczona wersja Article dla zadania 35
 public class Article {
 
-	private static Scanner s = new Scanner(System.in);
+	private Scanner s = new Scanner(System.in);
 	
     private int id;
     private String name;

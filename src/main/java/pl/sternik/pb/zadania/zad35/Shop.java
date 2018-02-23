@@ -1,10 +1,6 @@
 package pl.sternik.pb.zadania.zad35;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map; 
+import java.util.*;
 
 public class Shop {
 
@@ -50,8 +46,8 @@ public class Shop {
 	
 	public List<Employee> getSortedEmployeesByID(){
 		
-		// Pozwoliłem sobie zastować prostą lambdę,
-		// dzięki której w prosty sposób możemy posortować pracowników po ich ID
+		// Pozwolilem sobie zastowac prosta lambde,
+		// dzieki ktorej w prosty sposob mozemy posortowac pracownikow po ich ID
 		Collections.sort(pracownicy, (p1, p2) -> p1.getId() - p2.getId());
 		return pracownicy;
 	}
