@@ -1,7 +1,10 @@
 package pl.sternik.pb.zadania.zad10;
 
 import org.junit.Test;
-import static org.assertj.core.api.Assertions.assertThat;
+
+import pl.sternik.pb.zadania.zadmockito.ZadMockito;
+
+import static org.assertj.core.api.Assertions.*;
 
 public class Z10Test {
 
@@ -18,16 +21,8 @@ public class Z10Test {
 		}
 	}
 	
-	@Test
+	@Test(expected = ArithmeticException.class)
 	public void testDziel0() throws Exception {
-		int[] l1 = {-1,200,-26};
-		int[] l2 = {0,0,0};
-		char[] znak = {'/', '/', '/'};
-		int out = Integer.MIN_VALUE;
-		
-		for (int i = 0; i < l1.length; i++) {
-			int wynik = Z10.licz(l1[i], l2[i], znak[i]);
-			assertThat(wynik).isEqualTo(out);
-		}
+		assertThat(Z10.licz(1, 0, '/')).isInstanceOf(ArithmeticException.class);
 	}
 }
