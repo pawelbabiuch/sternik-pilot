@@ -12,7 +12,7 @@ public class CommandPrzelaczMenu implements Command {
 	
 	@Override
 	public void execute() {
-		pilot.changeState();
+		pilot.przelaczMenu();
 
 	}
 

@@ -5,14 +5,21 @@ import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
 import pl.sternik.pb.command.*;
+import pl.sternik.pb.menu.MenuDom;
+import pl.sternik.pb.menu.MenuPilota;
+import pl.sternik.pb.menu.MenuTv;
 
 public class Pilot {
 
-	private Map<String, Command> przyciski = new HashMap<>();
-	private boolean state = true;
+	public final MenuPilota MENU_DOMOWE = new MenuDom(this);
+	public final MenuPilota MENU_TV = new MenuTv(this);
+	
+	MenuPilota stan = MENU_DOMOWE;
+	
 	
 	public Pilot() {
-			changeState();
+		System.out.println("-----> Rozpoczęcie pracy pilota");
+		stan = MENU_DOMOWE;
     }
 	
 	public static void main(String[] args) {
@@ -23,6 +30,7 @@ public class Pilot {
 		
         do {
             System.out.println("");
+
 
             pilot.wyswietlMenu();
             System.out.print("Wybierz opcję: ");
@@ -40,58 +48,26 @@ public class Pilot {
         } while (czyDalej);
 	}
 	
-	public void changeState() {
-		
-		przyciski.clear();
-		
-		if(state) {
-			state = false;
-	        przyciski.put("1", new CommandSwatloWlacz());
-	        przyciski.put("2", new CommandSwiatloWylacz());
-	        przyciski.put("3", new CommandGarazOtworz());
-	        przyciski.put("4", new CommandGarazZamknij());
-	        przyciski.put("5", new CommandWentylatorWlacz());
-	        przyciski.put("6", new CommandWentylatorObroty1());
-	        przyciski.put("7", new CommandWentylatorObroty2());
-	        przyciski.put("8", new CommandWentylatorObroty3());
-	        przyciski.put("9", new CommandWentylatorWylacz());
-	        przyciski.put("0", new CommandPrzelaczMenu(this));
-	    //    przyciski.put("0", new CommandPusty());
-	        przyciski.put("Z", new CommandZakoncz());
-		}
-		else{
-			state = true;
-			przyciski.put("Z", new CommandZakoncz());
-			przyciski.put("0", new CommandPrzelaczMenu(this));
-			przyciski.put("1", new CommandTelewizorWlacz());
-			przyciski.put("2", new CommandTelewizorWylacz());
-			przyciski.put("3", new CommandsTelewizorCiszej());
-			przyciski.put("4", new CommandsTelewizorGlosniej());
-			przyciski.put("5", new CommandTelewizorNastepnyKanal());
-			przyciski.put("6", new CommandTelewizorPoprzedniKanal());
-			przyciski.put("7", new CommandTrybKanapowy());
-			przyciski.put("8", new CommandWylaczWszystko());
+	private void wyswietlMenu() {
+		stan.wyswietlMenu();
+	}
+	
+	public void przelaczMenu() {
+		if (stan == MENU_DOMOWE) {
+			stan = MENU_TV;
+		} else {
+			stan = MENU_DOMOWE;
 		}
 	}
 	
     public void kliknijPrzyciskNr(String numer) {
-        Command command = getCommandForKey(numer.toUpperCase());
+        Command command = stan.getCommandForKey(numer.toUpperCase());
         System.out.println("Kliknięto: " + numer);
         command.execute();
     }
-    
-    private Command getCommandForKey(String upperCase) {
-        return przyciski.get(upperCase);
-    }
-    
+     
     private static boolean czyWcisnietoZnakWyjscia(String znak) {
         return !(znak.toUpperCase().equals("Z"));
     }
-    
-    private void wyswietlMenu() {
-        System.out.println("------>Menu Pilota<------");
-        for (Map.Entry<String, Command> entry : przyciski.entrySet()) {
-            System.out.println(entry.getKey() + "-" + entry.getValue().getOpis());
-        }
-    }
+
 }

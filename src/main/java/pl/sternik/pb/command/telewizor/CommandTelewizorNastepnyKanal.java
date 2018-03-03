@@ -1,5 +1,6 @@
-package pl.sternik.pb.command;
+package pl.sternik.pb.command.telewizor;
 
+import pl.sternik.pb.command.Command;
 import pl.sternik.pb.telewizor.*;
 
 public class CommandTelewizorNastepnyKanal implements Command{

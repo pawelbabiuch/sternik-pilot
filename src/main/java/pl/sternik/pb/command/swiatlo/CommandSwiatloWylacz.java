@@ -1,5 +1,6 @@
-package pl.sternik.pb.command;
+package pl.sternik.pb.command.swiatlo;
 
+import pl.sternik.pb.command.Command;
 import pl.sternik.pb.swiatlo.*;
 
 public class CommandSwiatloWylacz implements Command{
