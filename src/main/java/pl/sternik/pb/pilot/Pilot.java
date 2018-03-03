@@ -69,6 +69,8 @@ public class Pilot {
 			przyciski.put("4", new CommandsTelewizorGlosniej());
 			przyciski.put("5", new CommandTelewizorNastepnyKanal());
 			przyciski.put("6", new CommandTelewizorPoprzedniKanal());
+			przyciski.put("7", new CommandTrybKanapowy());
+			przyciski.put("8", new CommandWylaczWszystko());
 		}
 	}
 	
