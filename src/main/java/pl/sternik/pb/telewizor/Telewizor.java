@@ -3,13 +3,19 @@ package pl.sternik.pb.telewizor;
 public class Telewizor {
 
 	private static Telewizor instance;
-	private final TelewizorStan wlaczony = new TelewizorWlaczony();
-	private final TelewizorStan wylaczony = new TelewizorWylaczony();
+	public final TelewizorStan WLACZONY = new TelewizorWlaczony();
+	public final TelewizorStan WYLACZONY = new TelewizorWylaczony();
+	
+	public final byte MAX_CHANEL = 10;
+	public final byte MAX_VOLUME = 10;
+	
+	public byte currentChanel = 1;
+	public byte currentVolume = 5;
+	
 	private Telewizor() {}
 	
-	private TelewizorStan stan = wylaczony;
-	private int channelID = 1;
-	private int volumePercent = 10;
+	public TelewizorStan stan = WYLACZONY;
+	
 	
 	public static Telewizor getInstance() {
 		
@@ -21,42 +27,26 @@ public class Telewizor {
 	}
 
 	public void wlacz() {
-		stan.wlacz();
-		stan = wlaczony;
+		stan = stan.wlacz();
 	}
 	
 	public void wylacz() {
-		stan.wylacz();
-		stan = wylaczony;
+		stan = stan.wylacz();
 	}
 
 	public void glosniej() {
-		
-		if((volumePercent += 10) > 100)
-			volumePercent = 100;
-		
-		stan.glosniej();
+		stan = stan.glosniej();
 	}
 	
 	public void ciszej() {
-	
-		if((volumePercent -= 10) < 0)
-			volumePercent = 0;
-		
-		stan.ciszej();
+		stan = stan.ciszej();
 	}
 
 	public void nastepnyKanal() {
-
-		channelID++;
-		stan.nastepnyKanal();
+		stan = stan.nastepnyKanal();
 	}
 	
 	public void poprzedniKanal() {
-		
-		if((channelID -= 1) < 1)
-			channelID = 1;
-		
-		stan.poprzedniKanal();
+		stan = stan.poprzedniKanal();
 	}
 }

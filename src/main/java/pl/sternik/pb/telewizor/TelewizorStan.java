@@ -1,12 +1,13 @@
 package pl.sternik.pb.telewizor;
 
 public interface TelewizorStan {
-	void wlacz();
-	void wylacz();
 	
-	void glosniej();
-	void ciszej();
+	TelewizorStan wlacz();
+	TelewizorStan wylacz();
 	
-	void nastepnyKanal();
-	void poprzedniKanal();
+	TelewizorStan glosniej();
+	TelewizorStan ciszej();
+	
+	TelewizorStan nastepnyKanal();
+	TelewizorStan poprzedniKanal();
 }
