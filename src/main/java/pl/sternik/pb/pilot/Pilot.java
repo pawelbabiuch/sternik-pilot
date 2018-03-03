@@ -9,7 +9,7 @@ import pl.sternik.pb.command.*;
 public class Pilot {
 
 	private Map<String, Command> przyciski = new HashMap<>();
-	private boolean state = false;
+	private boolean state = true;
 	
 	public Pilot() {
 			changeState();
@@ -43,9 +43,9 @@ public class Pilot {
 	public void changeState() {
 		
 		przyciski.clear();
-		state = !state;
 		
 		if(state) {
+			state = false;
 	        przyciski.put("1", new CommandSwatloWlacz());
 	        przyciski.put("2", new CommandSwiatloWylacz());
 	        przyciski.put("3", new CommandGarazOtworz());
@@ -60,6 +60,7 @@ public class Pilot {
 	        przyciski.put("Z", new CommandZakoncz());
 		}
 		else{
+			state = true;
 			przyciski.put("Z", new CommandZakoncz());
 			przyciski.put("0", new CommandPrzelaczMenu(this));
 			przyciski.put("1", new CommandTelewizorWlacz());

@@ -3,9 +3,11 @@ package pl.sternik.pb.pilot;
 public class Garaz {
 
 	private static Garaz instance;
+	private GarazStan otwarty = new GarazOtwarty();
+	private GarazStan zamkniety = new GarazZamkniety();
 	private Garaz() {}
 
-	private boolean isOpen = false;
+	private GarazStan stan = zamkniety;
 	
 	public static Garaz getInstance() {
 		
@@ -16,18 +18,14 @@ public class Garaz {
 		return instance;
 	}
 
-	public boolean getIsOpen() {
-		return isOpen;
+	
+	public void otworz() {
+		stan.otworz();
+		stan = otwarty;
 	}
 	
-	public void open() {
-		isOpen = true;
-		System.out.println("Garaz otwarty");
-	}
-	
-	public void close() {
-		isOpen = false;
-		System.out.println("Garaz zamkniety");
-
+	public void zamknij() {
+		stan.zamknij();
+		stan = zamkniety;
 	}
 }

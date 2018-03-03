@@ -6,7 +6,7 @@ public class CommandGarazZamknij implements Command{
 
 	@Override
 	public void execute() {
-		Garaz.getInstance().close();
+		Garaz.getInstance().zamknij();
 		
 	}
 

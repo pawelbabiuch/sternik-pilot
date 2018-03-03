@@ -3,24 +3,14 @@ package pl.sternik.pb.pilot;
 public class Telewizor {
 
 	private static Telewizor instance;
+	private final TelewizorStan wlaczony = new TelewizorWlaczony();
+	private final TelewizorStan wylaczony = new TelewizorWylaczony();
 	private Telewizor() {}
 	
-	private boolean isOn = false;
+	private TelewizorStan stan = wylaczony;
 	private int channelID = 1;
 	private int volumePercent = 10;
 	
-	public boolean isOn() {
-		return isOn;
-	}
-
-	public int getChannelID() {
-		return channelID;
-	}
-
-	public int getVolumePercent() {
-		return volumePercent;
-	}
-
 	public static Telewizor getInstance() {
 		
 		if(instance == null) {
@@ -31,63 +21,42 @@ public class Telewizor {
 	}
 
 	public void wlacz() {
-		isOn = true;
-		System.out.println("Telewizor wlaczony");
+		stan.wlacz();
+		stan = wlaczony;
 	}
 	
 	public void wylacz() {
-		isOn = false;
-		System.out.println("Telewizor wylaczony");
-
+		stan.wylacz();
+		stan = wylaczony;
 	}
 
 	public void glosniej() {
-
-		if(isOn == false) {
-			System.err.println("TV wylaczony. Brak zmiany");
-			return;
-		}
 		
 		if((volumePercent += 10) > 100)
 			volumePercent = 100;
 		
-		System.out.println("Telewizor glosnosc: " + volumePercent + "%");
+		stan.glosniej();
 	}
 	
 	public void ciszej() {
-		
-		if(isOn == false) {
-			System.err.println("TV wylaczony. Brak zmiany");
-			return;
-		}
-		
+	
 		if((volumePercent -= 10) < 0)
 			volumePercent = 0;
 		
-		System.out.println("Telewizor glosnosc: " + volumePercent + "%");
+		stan.ciszej();
 	}
 
 	public void nastepnyKanal() {
-		
-		if(isOn == false) {
-			System.err.println("TV wylaczony. Brak zmiany");
-			return;
-		}
-		
+
 		channelID++;
-		System.out.println("Telewizor kanal: " + channelID);
+		stan.nastepnyKanal();
 	}
 	
 	public void poprzedniKanal() {
 		
-		if(isOn == false) {
-			System.err.println("TV wylaczony. Brak zmiany");
-			return;
-		}
-		
 		if((channelID -= 1) < 1)
 			channelID = 1;
 		
-		System.out.println("Telewizor kanal: " + channelID);
+		stan.poprzedniKanal();
 	}
 }

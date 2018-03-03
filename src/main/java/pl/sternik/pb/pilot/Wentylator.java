@@ -3,17 +3,15 @@ package pl.sternik.pb.pilot;
 public class Wentylator {
 
 	private static Wentylator instance;
+	
+	public final WentylatorStan WYLACZONY = new WentylatorWylaczony(this);
+	public final WentylatorStan OBROTY1 = new WentylatorObroty1(this);
+	public final WentylatorStan OBROTY2 = new WentylatorObroty2(this);
+	public final WentylatorStan OBROTY3 = new WentylatorObroty3(this);
+	
+	private WentylatorStan stan = WYLACZONY;
+	
 	private Wentylator() {}
-	
-	private byte obroty = 0; // 0 = wylaczony, 1-3 = sila obrotow
-	
-	public byte getObroty() {
-		return obroty;
-	}
-	
-	public boolean getIsOn() {
-		return (obroty == 0)? false : true;
-	}
 
 	public static Wentylator getInstance() {
 		
@@ -25,41 +23,22 @@ public class Wentylator {
 	}
 	
 	public void wlacz() {	
-		obroty1();
-		System.out.println("Wentylator wlaczony: " + getIsOn());
+		stan = stan.wlacz();
 	}
 	
 	public void wylacz() {
-		
-		if(obroty > 1) obroty1();
-		
-		obroty = 0;
-		System.out.println("Wentylator wlaczony: " + getIsOn());
+		stan = stan.wylacz();
 	}
 	
 	public void obroty1() {
-		
-		if(obroty > 2) obroty2();
-		
-		obroty = 1;
-		System.out.println("Wentylator, obroty: " + obroty);
+		stan = stan.obroty1();
 	}
 	
 	public void obroty2() {
-		
-		if(obroty < 1) obroty1();
-		
-		obroty = 2;
-		System.out.println("Wentylator, obroty: " + obroty);
-		
+		stan = stan.obroty2();
 	}
 	
 	public void obroty3() {
-		
-		if(obroty < 2) obroty2();
-		
-		obroty = 3;
-		System.out.println("Wentylator, obroty: " + obroty);
-		
+		stan = stan.obroty3();
 	}
 }

@@ -6,7 +6,7 @@ public class CommandSwiatloWylacz implements Command{
 
 	@Override
 	public void execute() {
-		Swiatlo.getInstance().changeState(false);
+		Swiatlo.getInstance().wylacz();
 		
 	}
 

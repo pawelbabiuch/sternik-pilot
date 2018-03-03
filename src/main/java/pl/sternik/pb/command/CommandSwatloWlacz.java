@@ -6,7 +6,7 @@ public class CommandSwatloWlacz implements Command{
 
 	@Override
 	public void execute() {
-		Swiatlo.getInstance().changeState(true);
+		Swiatlo.getInstance().wlacz();
 		
 	}
 

@@ -6,7 +6,7 @@ public class CommandGarazOtworz implements Command{
 
 	@Override
 	public void execute() {
-		Garaz.getInstance().open();
+		Garaz.getInstance().otworz();
 		
 	}
 
