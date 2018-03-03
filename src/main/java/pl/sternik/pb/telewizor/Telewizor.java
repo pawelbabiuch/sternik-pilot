@@ -1,4 +1,4 @@
-package pl.sternik.pb.pilot;
+package pl.sternik.pb.telewizor;
 
 public class Telewizor {
 

@@ -1,4 +1,4 @@
-package pl.sternik.pb.pilot;
+package pl.sternik.pb.garaz;
 
 public interface GarazStan {
 	void otworz();

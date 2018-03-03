@@ -1,4 +1,4 @@
-package pl.sternik.pb.pilot;
+package pl.sternik.pb.wentylator;
 
 public interface WentylatorStan {
 	WentylatorStan wlacz();

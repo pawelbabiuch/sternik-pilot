@@ -1,6 +1,6 @@
 package pl.sternik.pb.command;
 
-import pl.sternik.pb.pilot.Swiatlo;
+import pl.sternik.pb.swiatlo.*;
 
 public class CommandSwatloWlacz implements Command{
 

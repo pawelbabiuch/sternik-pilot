@@ -1,7 +1,6 @@
 package pl.sternik.pb.command;
 
-import pl.sternik.pb.pilot.Wentylator;
-
+import pl.sternik.pb.wentylator.*;
 public class CommandWentylatorObroty2 implements Command{
 
 	@Override

@@ -1,6 +1,6 @@
 package pl.sternik.pb.command;
 
-import pl.sternik.pb.pilot.Telewizor;
+import pl.sternik.pb.telewizor.*;
 
 public class CommandTelewizorWylacz implements Command {
 

@@ -1,6 +1,6 @@
 package pl.sternik.pb.command;
 
-import pl.sternik.pb.pilot.Wentylator;
+import pl.sternik.pb.wentylator.*;
 
 public class CommandWentylatorWlacz implements Command{
 

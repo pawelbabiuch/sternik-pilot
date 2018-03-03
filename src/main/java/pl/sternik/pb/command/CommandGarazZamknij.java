@@ -1,6 +1,6 @@
 package pl.sternik.pb.command;
 
-import pl.sternik.pb.pilot.Garaz;
+import pl.sternik.pb.garaz.*;
 
 public class CommandGarazZamknij implements Command{
 
